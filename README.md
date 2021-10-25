@@ -11,14 +11,23 @@ countriesWithpatents <- table(pts$ee_country)
 sort(countriesWithpatents, decreasing = TRUE)
 head(pts)
 
-# Number of patents by year 
+# Number of applied for and granted patents by year 
 table(pts$applyear)
 
 head(years)
 library(tidyverse)
+# number of patents applied for
 ggplot(years, aes(x = Var1, y = Freq))+
   geom_point()+
   geom_line()
+
+# number of patents granted
+grantYear <- data.frame((table(pts$grantyear)))
+head(grantYear)
+
+ggplot(grantYear, aes(x = Var1, y = Freq))+
+  geom_point()
+
 
 
 # company names
