@@ -40,3 +40,7 @@ typesubset <- typesubset[typesubset$applyear< "2017",]
 head(typesubset)
 max(typesubset$applyear, na.rm = TRUE)
 min(typesubset$applyear, na.rm = TRUE)
+
+typeByyear <- table(typesubset$ptype, typesubset$applyear)
+head(typeByyear)
+# ^ the number of design patents applied for has increased from 2010-2016, while the number of utility patents applied for has decreased in the same time frame
